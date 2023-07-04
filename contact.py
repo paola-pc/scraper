@@ -4,9 +4,13 @@ from lib import getNextAnchor
 from bs4 import BeautifulSoup
 
 contact_url = 'https://reviewpro.shijigroup.com/team#contact'
-html = urllib.request.urlopen(contact_url)
-soup = BeautifulSoup(html, 'html.parser')
+try:
+  html = urllib.request.urlopen(contact_url)
+except:
+   print('Network Error in contact.py')
+   exit()
 
+soup = BeautifulSoup(html, 'html.parser')
 contact_grid_sections = soup.find('div', class_= 'contact_grid').find_all('h3')
 customer_suport_string_refs = ['EMEA', 'APAC', 'China', 'USA', 'Australia & New Zealand']
 mail_re = r'[\w\.-]+@[\w\.-]+'

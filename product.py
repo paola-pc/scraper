@@ -2,10 +2,15 @@ import urllib.request, urllib.parse, urllib.error
 from bs4 import BeautifulSoup
 from lib import keyValueFromAnchorTags
 
-contact_url = 'https://reviewpro.shijigroup.com'
-html = urllib.request.urlopen(contact_url)
-soup = BeautifulSoup(html, 'html.parser')
+url = 'https://reviewpro.shijigroup.com'
 
+try:
+  html = urllib.request.urlopen(url)
+except:
+  print('Network Error in product.py')
+  exit()
+
+soup = BeautifulSoup(html, 'html.parser')
 dropdown = soup.find('div', class_= 'nav_dropdown-list').findAll(class_='nav_dropdown-block')
 product_results = {'products': {}, 'essential': {}}
 
