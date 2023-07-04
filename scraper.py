@@ -9,7 +9,6 @@ soup = BeautifulSoup(html, 'html.parser')
 
 contact_grid_sections = soup.find('div', class_= 'contact_grid').find_all('h3')
 customer_suport_string_refs = ['EMEA', 'APAC', 'China', 'USA', 'Australia & New Zealand']
-# mail_re = '^mailto:(.+\.com)' # To keep the query url use this regular expression instead: '^mailto:(.+)' 
 mail_re = r'[\w\.-]+@[\w\.-]+'
 contact_results = {}
 
@@ -34,5 +33,19 @@ for contact_section in contact_grid_sections:
     else:
        contact_results[contact_section.contents[0]] = getNextAnchor(mail_re, None, None, section=contact_section)
        
-with open('contact_results.json', 'w') as json_file:
-    json.dump(contact_results, json_file, indent=4)
+
+dropdown = soup.find('div', class_= 'nav_dropdown-list').findAll(class_='nav_dropdown-block')
+product_results = {'products': {}, 'essential': {}}
+block = 0
+while block < len(dropdown):
+  category = 'products' if block == 0 else 'essential'
+  for a_tags in dropdown[block].findAll('a'):
+    baseUrl = 'https://www.shijigroup.com'
+    link_destructured = re.findall('https://www.shijigroup.com?|(.+)', a_tags.get('href'))
+    endpoint = link_destructured[len(link_destructured)-1]
+    product_results[category][a_tags.contents[0]] = baseUrl + endpoint
+  block += 1
+
+final_data = { 'contact': contact_results, 'products': product_results}
+with open('data.json', 'w') as json_file:
+    json.dump(final_data, json_file, indent=4)
