@@ -10,6 +10,6 @@ Scraper is a Python script for basic web scraping.
 
 **Note:** You can do this globally to run the app or, as an alternative, you can create a virtual enviroment for the project using `venv`. The second approach is usually recommended as it won't interfere or cause dependency conflicts with any other projects you run in your machine.
 
-2. From the root folder, run the scraper.py on your CLI: `python3 scraper.py`. This will create a json file calld 'data.json' containing the data retrieved.
+2. From the root folder, run the scraper.py on your CLI: `python3 main.py`. This will create a json file calld 'data.json' containing the data retrieved.
 
 3. You can run `cat data.json` to visualize the file.
