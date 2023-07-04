@@ -2,7 +2,7 @@ import urllib.request, urllib.parse, urllib.error
 from bs4 import BeautifulSoup
 from lib import keyValueFromAnchorTags
 
-contact_url = 'https://reviewpro.shijigroup.com/team#contact'
+contact_url = 'https://reviewpro.shijigroup.com'
 html = urllib.request.urlopen(contact_url)
 soup = BeautifulSoup(html, 'html.parser')
 
