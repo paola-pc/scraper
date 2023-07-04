@@ -1,0 +1,37 @@
+{
+    "contact": {
+        "Customer Support": {
+            "EMEA": "reviewpro.customersuccess@shijigroup.com",
+            "APAC": "reviewpro.asia@shijigroup.com",
+            "China": "reviewpro.china@shijigroup.com",
+            "USA": "reviewpro.us@shijigroup.com",
+            "Australia & New Zealand": "reviewpro.anz@shijigroup.com"
+        },
+        "Sales Inquiries": "reviewpro.sales@shijigroup.com",
+        "Partnership Opportunities": "partners@reviewpro.com",
+        "Press": "reviewpro.press@shijigroup.com",
+        "Billing Issues": [
+            "accounts@reviewpro.com",
+            "reviewpro.payments@shijigroup.com"
+        ]
+    },
+    "products": {
+        "products": {
+            "Guest Experience Platform": "https://reviewpro.shijigroup.com/products/guest-experience-platform",
+            "Hotel Reputation": "https://reviewpro.shijigroup.com/products/hotel-reputation",
+            "Guest Surveys": "https://reviewpro.shijigroup.com/products/guest-surveys",
+            "Case Management": "https://reviewpro.shijigroup.com/products/case-management",
+            "Guest Communications": "https://reviewpro.shijigroup.com/products/messaging-automation",
+            "Link to Shiji Digital Dine": "https://www.shijigroup.com/brands/digital-dine",
+            "Link to Shiji Digital Stay": "https://www.shijigroup.com/brands/digital-stay"
+        },
+        "essential": {
+            "Global Review Index\u2122": "https://reviewpro.shijigroup.com/essentials/global-review-index",
+            "Competitor Analysis": "https://reviewpro.shijigroup.com/essentials/competitor-analysis",
+            "AI-hotel Chatbot": "https://reviewpro.shijigroup.com/essentials/ai-hotel-chatbot",
+            "Mobile App": "https://reviewpro.shijigroup.com/essentials/mobile-app",
+            "Semantic Analysis": "https://reviewpro.shijigroup.com/essentials/semantic-analysis",
+            "Integrations": "https://reviewpro.shijigroup.com/integrations"
+        }
+    }
+}
