@@ -16,7 +16,7 @@ for contact_section in contact_grid_sections:
   if contact_section.contents[0] == 'Customer Support':
     references = {}
     for string_ref in customer_suport_string_refs:
-      references[string_ref] = getNextAnchor.get_next_anchor(mail_re, soup, 'div', string_ref, )
+      references[string_ref] = getNextAnchor.get_next_anchor(mail_re, soup, tag='div', text=string_ref)
     contact_results['Customer Support'] = references
   else:
     if len(contact_section.fetchNextSiblings('a')) > 1:
@@ -25,7 +25,7 @@ for contact_section in contact_grid_sections:
            links.append(re.findall(mail_re, link.get('href'))[0])
         contact_results[contact_section.contents[0]] = links
     else:
-       contact_results[contact_section.contents[0]] = getNextAnchor.get_next_anchor(mail_re, None, None, section=contact_section)
+       contact_results[contact_section.contents[0]] = getNextAnchor.get_next_anchor(mail_re, None, section=contact_section)
 
 
 
